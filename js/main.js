@@ -10,7 +10,7 @@
     const cfg = {
         
         // MailChimp URL
-        mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6' 
+        mailChimpURL : 'https://gmail.us9.list-manage.com/subscribe/post?u=07364e26591074767f327ca1e&amp;id=6df4659ca6' 
 
     };
 
@@ -247,11 +247,11 @@
             if (validity.valid) return;
 
             // If field is required and empty
-            if (validity.valueMissing) return 'Please enter an email address.';
+            if (validity.valueMissing) return 'S il vous plait entrez une adresse mail. ';
 
             // If not the right type
             if (validity.typeMismatch) {
-                if (field.type === 'email') return 'Please enter a valid email address.';
+                if (field.type === 'email') return 'S il vous plaît, mettez une adresse email valide.';
             }
 
             // If pattern doesn't match
@@ -261,11 +261,11 @@
                 if (field.hasAttribute('title')) return field.getAttribute('title');
 
                 // Otherwise, generic error
-                return 'Please match the requested format.';
+                return 'Veuillez faire correspondre le format demandé.';
             }
 
             // If all else fails, return a generic catchall error
-            return 'The value you entered for this field is invalid.';
+            return 'La valeur que vous avez saisie pour ce champ n est pas valide.';
 
         };
 
@@ -326,7 +326,7 @@
             // Create global variable for the status container
             window.mcStatus = form.querySelector('.mc-status');
             window.mcStatus.classList.remove('error-message', 'success-message')
-            window.mcStatus.innerText = 'Submitting...';
+            window.mcStatus.innerText = 'Un instant...';
 
             // Insert script tag into the DOM
             ref.parentNode.insertBefore( script, ref );
@@ -353,6 +353,7 @@
             }
 
             submitMailChimpForm(this);
+
 
         }, false);
 
